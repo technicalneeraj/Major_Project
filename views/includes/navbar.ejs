@@ -1,0 +1,31 @@
+ <style>
+  .upper{
+    background-color: white;
+  }
+ </style>
+ <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">  <!-- lg means jab large hain toh explain hain medium par  three lines aajayegi -->
+    <div class="container-fluid upper">
+      <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <!-- <a class="nav-link active" aria-current="page" href="/">Home</a> -->
+          <a class="nav-link" href="/listings">Explore</a>
+        </div>
+        <div class="navbar-nav ms-auto">  
+          <!-- ms-auto sa margin from start and aakhir main move -->
+          <a class="nav-link" href="/listings/new">Add listing</a>
+          
+          <% if(!currentuser){ %>
+          <a class="nav-link active" aria-current="page" href="/signup"><b>Signup</b></a>
+          <a class="nav-link" href="/login"><b>Login</b></a>
+          <% } %>
+          <% if(currentuser){ %>
+          <a class="nav-link" href="/logout"><b>Logout</b></a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </nav>
