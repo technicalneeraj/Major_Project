@@ -4,6 +4,27 @@
     // const listing=<%- JSON.stringify(listing) %>;
     const listing=JSON.parse('<%-JSON.stringify(listing) %>');
 </script>
+<style>
+    @media screen and (max-width: 570px) {
+    .card1 {
+        width: 200%;  /* Double the width */
+        height: 50%;  /* Halve the height */
+        /* Additional styles for .card when screen size is less than 570px */
+        }
+    }
+    @media screen and (max-width: 570px) {
+    #map {
+        width: 40vh;  
+        height: 200px;  
+        }
+    }
+    @media screen and (max-width: 570px) {
+    .show-card{
+        width: 40vh;   
+        }
+    } 
+
+</style>
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +96,7 @@
         <div class="row">
             <p><b>All Reviews</b></p>
             <% for(review of listing.reviews){ %>
-                <div class="card col-5 ms-3 mb-3">
+                <div class="card1 col-8 ms-3 mb-3">
                     <h5 class="card-title"><%= review.author.username %></h5>
                     <p class="starability-result" data-rating="<%= review.rating %>"></p>
                     <p class="card-text"><%= review.comment %></p>
