@@ -58,7 +58,7 @@ const Store=MongoStore.create({
     touchAfter:24*3600
 });
 Store.on("error",()=>{
-    console.log("Error in session store",err);
+    console.log("Error in session store");
 });
 
 
@@ -108,6 +108,11 @@ app.use((err,req,res,next)=>{
 });
 
 
+app.get("/",(req,res)=>{
+    // console.dir(req.cookies);
+    res.send("working");
+});
+ 
 // const {listingschema,reviewschema}=require("./schema.js");
 // const Review=require("./models/reviews.js");
 
@@ -127,13 +132,6 @@ app.use((err,req,res,next)=>{
 
 // const mongoose_URL="mongodb://127.0.0.1:27017/wonderlust";
 
-
-
-// app.get("/",(req,res)=>{
-//     // console.dir(req.cookies);
-//     res.send("working");
-// });
- 
 // app.get("/demouser",async (req,res)=>{
 //     let registeruser=new User({
 //         email:"jetha12@gmail.com",
