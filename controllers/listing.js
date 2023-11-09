@@ -47,7 +47,7 @@ module.exports.createlisting=async(req,res,next)=>{
     let newlisting=new Listing(req.body.obj);
     newlisting.owner=req.user._id;
     newlisting.image={url,filename};
-    newlisting.geometry=ans.body.features[0].geometry
+    newlisting.geometry=ans.body.features[0].geometry;
     await newlisting.save();
     req.flash("success","Listing is succesfully saved");
     res.redirect("/listings");
@@ -67,7 +67,13 @@ module.exports.editlisting=async (req,res)=>{
 
 module.exports.updatelisting=async (req,res)=>{
     let {id}=req.params;
+    let ans=await geocodingClient.forwardGeocode({
+        query: req.body.obj.location,
+        limit: 1
+      }).send();
     let listing=await Listing.findByIdAndUpdate(id,{...req.body.obj});
+    listing.geometry=ans.body.features[0].geometry;
+    await listing.save();
     if(typeof req.file !== "undefined"){
         let url=req.file.path;
         let filename=req.file.filename;
