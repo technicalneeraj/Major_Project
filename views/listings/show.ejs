@@ -23,6 +23,11 @@
         width: 40vh;   
         }
     } 
+    @media screen and (max-width: 767px) {
+    .edit{
+        width: 60px;  
+        }
+    } 
 
 </style>
 <!-- <!DOCTYPE html>
@@ -49,7 +54,7 @@
         </div>
         <% if(currentuser && listing.owner._id.equals(currentuser._id)){ %>
         <div class="btns">
-            <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark edit-btn col-1 offset-2">
+            <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark edit-btn col-1 offset-2 edit">
                 Edit 
             </a>
             <form method="post" action="/listings/<%= listing.id %>?_method=delete">
