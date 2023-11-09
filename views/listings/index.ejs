@@ -7,6 +7,9 @@
     <title>Document</title>
 </head> -->
 <style>
+    .list-images{
+      box-shadow: 0px 6px 5px black;
+    }
     .filters{
       display: flex;
       flex-wrap:wrap;
@@ -35,13 +38,6 @@
     .tax-info{
       display: none;
     }
-    @media screen and (max-width: 990px) {
-      .filters {
-        display: none; /* Hide the element on screens with a width less than 990px */
-      }
-    }
-
-
 </style>
     <!-- <h1>All listings</h1> -->
     <!-- <form method="get" action="/listings/new">
@@ -81,9 +77,9 @@
     <% for(let listing of allListings){ %>
     <a href="/listings/<%= listing._id %>" class="listing-link">
     <div class="card col listing-card">
-        <img src="<%= listing.image.url %>" class="card-img-top" alt="lising-image" style="height: 20rem;">
+        <img src="<%= listing.image.url %>" class="card-img-top list-images" alt="lising-image" style="height: 20rem;">
         <div class="card-img-overlay"></div>
-        <div class="card-body">
+        <div class="card-body mt-3">
           <p class="card-text">
            <b> <%= listing.title %><br> </b>
            <% if (listing.price !== undefined) { %>
