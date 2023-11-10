@@ -12,8 +12,8 @@
     }
     .filters{
       display: flex;
-      flex-wrap:wrap;
-      align-items: center;
+      justify-content: center;
+      align-items: center; 
     }
     .filter{
       margin-right: 2rem;
@@ -32,11 +32,17 @@
       height: 3.2rem;
       display: flex;
       align-items: center;
-      margin-left: 4rem;
-      margin-top: 2rem;
+      justify-content: center;
+      margin-top: 1rem;
     }
     .tax-info{
       display: none;
+    }
+    .initial-price{
+      display: inline;
+    }
+    .card-text{
+      margin-bottom: 0px;
     }
 </style>
     <!-- <h1>All listings</h1> -->
@@ -68,7 +74,7 @@
       <div class="tax-toggle">
         <div class="form-check-reverse form-switch">
           <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-          <label class="form-check-label" for="flexSwitchCheckDefault">Show Prices with Tax</label>
+          <label class="form-check-label" for="flexSwitchCheckDefault">Show Total price after Tax</label>
         </div>
       </div>
     </div>
@@ -81,10 +87,10 @@
         <div class="card-img-overlay"></div>
         <div class="card-body mt-3">
           <p class="card-text">
-           <b> <%= listing.title %><br> </b>
-           <% if (listing.price !== undefined) { %>
-            &#8377; <%= listing.price.toLocaleString("en-IN") %> / night
-            <i class="tax-info"> &nbsp; &nbsp;+18% GST</i>
+          <b> <%= listing.title %><br> </b>
+          <% if (listing.price !== undefined) { %>
+            <p class="initial-price">&#8377; <%= listing.price.toLocaleString("en-IN") %> / night</p>
+            <p class="tax-info" > &#8377; <%= (listing.price *1.18).toLocaleString("en-IN") %> /night</p>
             <% } else { %>
               Price not available
             <% } %>
@@ -98,15 +104,24 @@
     <script>
       let taxswitch=document.getElementById("flexSwitchCheckDefault");
       taxswitch.addEventListener("click",()=>{
+        let spans=document.getElementsByClassName("initial-price");
+        for(span of spans){
+        if(span.style.display==="none"){
+        span.style.display="inline";
+        }else{
+          span.style.display="none";
+        }
+      }
         let textinfo=document.getElementsByClassName("tax-info");
         for(info of textinfo){
-          if(info.style.display!="inline"){
-          info.style.display="inline";
+          if(info.style.display=="inline"){
+          info.style.display="none";
           }else{
-            info.style.display="none";
+            info.style.display="inline";
           }
         }
       });
     </script>
   
 <!-- </html> -->
+
