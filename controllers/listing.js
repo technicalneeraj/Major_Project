@@ -36,7 +36,6 @@ module.exports.createlisting=async(req,res,next)=>{
     // if(result.error){
     //     throw new ExpressError(400,result.error);
     // }
-
    let ans=await geocodingClient.forwardGeocode({
         query: req.body.obj.location,
         limit: 1
@@ -90,4 +89,10 @@ module.exports.deletedlisting=async(req,res)=>{
     console.log(deletedlist);
     req.flash("success","Listing was successfully deleted")
     res.redirect("/listings");
+}
+
+module.exports.filterslisting=async(req,res)=>{
+    let {q}=req.query;
+    let allListings=await Listing.find({category:q});
+    res.render("listings/index.ejs",{allListings});
 }

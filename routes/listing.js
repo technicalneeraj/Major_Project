@@ -21,6 +21,8 @@ router.route("/")
 //always be before /listings/:id otherewise new is deal as id
 router.get("/new",isuserlogin,listingcontroller.rendernewform);
 
+router.get("/filter",wrapasync(listingcontroller.filterslisting));
+
 router.route("/:id")
     .get(wrapasync(listingcontroller.showlisting))
     //update route

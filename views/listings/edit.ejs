@@ -42,6 +42,28 @@
                     </div>
                 </div>
                 <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" name="obj[category]" class="form-control" required>
+                        <option value="Trending" <%= listing.category === 'Trending' ? 'selected' : '' %>>Trending</option>
+                        <option value="Bread & Breakfast" <%= listing.category === 'Bread & Breakfast' ? 'selected' : '' %>>Bread & Breakfast</option>
+                        <option value="Amazing pools" <%= listing.category === 'Amazing pools' ? 'selected' : '' %>>Amazing pools</option>
+                        <option value="Lake" <%= listing.category === 'Lake' ? 'selected' : '' %>>Lake</option>
+                        <option value="BeachFront" <%= listing.category === 'BeachFront' ? 'selected' : '' %>>BeachFront</option>
+                        <option value="OMG!" <%= listing.category === 'OMG!' ? 'selected' : '' %>>OMG!</option>
+                        <option value="Design" <%= listing.category === 'Design' ? 'selected' : '' %>>Design</option>
+                        <option value="Farms" <%= listing.category === 'Farms' ? 'selected' : '' %>>Farms</option>
+                        <option value="Amazing views" <%= listing.category === 'Amazing views' ? 'selected' : '' %>>Amazing views</option>
+                        <option value="No animals" <%= listing.category === 'No animals' ? 'selected' : '' %>>No animals</option>
+                        <option value="Mountain views" <%= listing.category === 'Mountain views' ? 'selected' : '' %>>Mountain views</option>
+                        <option value="Campaign area" <%= listing.category === 'Campaign area' ? 'selected' : '' %>>Campaign area</option>
+                        <option value="Tropical" <%= listing.category === 'Tropical' ? 'selected' : '' %>>Tropical</option>
+                        <option value="24*7 Water" <%= listing.category === '24*7 Water' ? 'selected' : '' %>>24*7 Water</option>
+                        <option value="Mosquito free" <%= listing.category === 'Mosquito free' ? 'selected' : '' %>>Mosquito free</option>
+                    </select>
+                    <div class="invalid-feedback">enter a valid category </div>
+                </div>
+                
+                <div class="mb-3">
                     <label for="country" class="form-label">Country</label>
                     <input name="obj[country]" value="<%= listing.country %>" type="string" class="form-control" id="country" required>
                     <div class="invalid-feedback">enter a valid country </div>

@@ -24,9 +24,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="image" class="form-label">Upload Image</label>
-                    <input name="obj[image]" type="file" id="iamge" class="form-control" required>
+                    <input name="obj[image]" type="file" id="image" class="form-control" required>
                 </div>
-
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="price" class="form-label">Price</label>
@@ -40,7 +39,27 @@
                         <div class="invalid-feedback">Location should be valid</div>
                     </div>
                 </div>
-
+                <div class="mb-3"> 
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" name="obj[category]" class="form-control" required>
+                        <option value="Trending">Trending</option>
+                        <option value="Bread & Breakfast">Bread & Breakfast</option>
+                        <option value="Amazing pools">Amazing pools</option>
+                        <option value="Lake">Lake</option>
+                        <option value="BeachFront">BeachFront</option>
+                        <option value="OMG!">OMG!</option>
+                        <option value="Design">Design</option>
+                        <option value="Farms">Farms</option>
+                        <option value="Amazing views">Amazing views</option>
+                        <option value="No animals">No animals</option>
+                        <option value="Mountain views">Mountain views</option>
+                        <option value="Campaign area">Campaign area</option>
+                        <option value="Tropical">Tropical</option>
+                        <option value="24*7 Water">24*7 Water</option>
+                        <option value="Mosquito free">Mosquito free</option>
+                      </select>
+                    <div class="invalid-feedback">Choose atleast one</div>
+                </div>
                 <div class="mb-3"> 
                     <label for="country" class="form-label">Country</label>
                     <input name="obj[country]" placeholder="enter the country" type="string" class="form-control" id="country" required>
