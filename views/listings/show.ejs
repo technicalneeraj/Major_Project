@@ -27,7 +27,7 @@
     .edit{
         width: 60px;  
         }
-    } 
+    }
 
 </style>
 <!-- <!DOCTYPE html>
@@ -48,8 +48,8 @@
                 <p class="card-text"> Owned by <i><%= listing.owner.username %></i> </p>
                 <p><%= listing.description %></p>
                 <p> &#8377; <%= listing.price.toLocaleString("en-IN") %> </p>  
-                <p><%= listing.location %></p>
-                <p><%= listing.country %></p>
+                <p><%= listing.location %>,<%= listing.country %></p>
+                Category: <%= listing.category %>
             </div>
         </div>
         <% if(currentuser && listing.owner._id.equals(currentuser._id)){ %>

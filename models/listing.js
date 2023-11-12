@@ -36,8 +36,9 @@ const listingschema=new mongoose.Schema({
         }
       },
     category:{
-        type:String,
-        enum:["Trending","Bread & Breakfast","Amazing pools","Lake","BeachFront","OMG!","Design","Farms","Amazing views","No animals","Mountain views","Campaign area","Tropical","24*7 Water","Mosquito free"]
+        type:[String],
+        enum:["Trending","Bread & Breakfast","Amazing pools","Lake","BeachFront","OMG!","Design","Farms","Amazing views","No animals","Mountain views","Campaign area","Tropical","24*7 Water","Mosquito free"],
+        required:true
     }
 });
 

@@ -43,7 +43,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
-                    <select id="category" name="obj[category]" class="form-control" required>
+                    <select id="category" name="obj[category]" class="form-control" required multiple>
                         <option value="Trending" <%= listing.category === 'Trending' ? 'selected' : '' %>>Trending</option>
                         <option value="Bread & Breakfast" <%= listing.category === 'Bread & Breakfast' ? 'selected' : '' %>>Bread & Breakfast</option>
                         <option value="Amazing pools" <%= listing.category === 'Amazing pools' ? 'selected' : '' %>>Amazing pools</option>
