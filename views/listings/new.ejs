@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head> -->
+<style>
+     @media screen and (max-width: 450px) {
+    .disabled{
+        display:none;   
+        }
+    } 
+</style>
 <body> 
     <div class="row mt-3">
         <div class="col-8 offset-2">  <!-- ya pura scrren ka 8 hiso tak ka space dedega out of 12-->
@@ -42,6 +49,7 @@
                 <div class="mb-3"> 
                     <label for="category" class="form-label">Category</label>
                     <select id="category" name="obj[category]" class="form-control" required multiple>
+                        <option class="disabled" disabled>(single:click) & (Multiple:ctrl+click)</option>
                         <option value="Trending">Trending</option>
                         <option value="Bread & Breakfast">Bread & Breakfast</option>
                         <option value="Amazing pools">Amazing pools</option>

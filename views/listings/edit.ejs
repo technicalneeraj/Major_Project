@@ -6,6 +6,13 @@
     <title>Document</title>
 </head> -->
 <% layout("/layouts/boilerplate") %>
+<style>
+    @media screen and (max-width: 450px) {
+   .disabled{
+       display:none;   
+       }
+   } 
+</style>
 <body>
     <div class="row mt-3">
         <div class="col-8 offset-2">
@@ -44,6 +51,7 @@
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
                     <select id="category" name="obj[category]" class="form-control" required multiple>
+                        <option class="disabled" disabled>(single:click) & (Multiple:ctrl+click)</option>
                         <option value="Trending" <%= listing.category === 'Trending' ? 'selected' : '' %>>Trending</option>
                         <option value="Bread & Breakfast" <%= listing.category === 'Bread & Breakfast' ? 'selected' : '' %>>Bread & Breakfast</option>
                         <option value="Amazing pools" <%= listing.category === 'Amazing pools' ? 'selected' : '' %>>Amazing pools</option>
